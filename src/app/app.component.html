@@ -1,0 +1,16 @@
+<div class='cm-screen'>
+  <div class="cm-info">
+    {{allMoneyInCashmashine}}
+  </div>
+  <div class="cm-main-input">
+    <input (keydown.enter)="moneyToTake = $event.target.value" #takeMoneyInput>
+    <button (click)="takeMoney(takeMoneyInput.value);">Take money</button>
+  </div>
+
+
+  <div class="cm--bottom-info">
+    <div *ngFor="let banknote of availableBanknotes">
+      {{banknote}} = {{bankMoney[banknote]}}
+    </div>
+  </div>
+</div>
